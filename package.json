@@ -1,27 +1,28 @@
 {
   "name": "portpolio",
   "version": "1.0.0",
-  "description": "my portpolio website",
+  "description": "responsive portpolio website",
   "main": "src/index.js",
-  "scripts": {
-    "start": "sass --watch src/sass/main.scss dist/css/style.css"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarbanandabhikkhu/sarbanandabhikkhu.git"
+    "url": "git+https://github.com/sarbanandabhikkhu/portpolio.git"
   },
   "keywords": [
     "portpolio",
-    "responsive",
-    "node-sass"
+    "responsive"
   ],
   "author": "sarbanandabhikkhu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sarbanandabhikkhu/sarbanandabhikkhu/issues"
+    "url": "https://github.com/sarbanandabhikkhu/portpolio/issues"
   },
-  "homepage": "https://github.com/sarbanandabhikkhu/sarbanandabhikkhu#readme",
+  "homepage": "https://sarbanandabhikkhu.github.io/portpolio",
+  "scripts": {
+    "sass": "sass --watch src/sass/main.scss dist/css/style.css",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.54.9"
   }
 }
