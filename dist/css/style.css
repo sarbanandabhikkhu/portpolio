@@ -10,7 +10,7 @@
   width: 28px;
   height: 3px;
   margin: 0 0 5px 0;
-  background: #000;
+  background: #fff;
   border-radius: 2px;
   transition: all 0.5s ease-out;
 }
@@ -49,7 +49,7 @@
 .menu-nav {
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
+  background: #373737;
   transform: translate3d(0, -100%, 0);
   list-style: none;
   transition: all 0.5s ease-out;
@@ -58,7 +58,7 @@
   transform: translate3d(0, 0, 0);
 }
 .menu-branding {
-  background: #fff;
+  background: #444;
   transform: translate3d(0, 100%, 0);
   transition: all 0.5s ease-out;
 }
@@ -89,7 +89,7 @@
   text-transform: uppercase;
   padding: 1rem 0;
   font-weight: 300;
-  color: #000;
+  color: #fff;
   text-decoration: none;
   transition: all 0.5s ease-out;
 }
@@ -124,8 +124,8 @@ html {
 body {
   margin: 0;
   height: 100%;
-  background: #fff;
-  color: #000;
+  background: #444;
+  color: #fff;
   line-height: 1.5;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -142,7 +142,7 @@ body#bg-image:after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(68, 68, 68, 0.5);
 }
 
 h1,
@@ -162,12 +162,12 @@ h3.sm-heading {
   font-size: 2rem;
   padding: 2rem 1rem;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(73, 73, 73, 0.5);
 }
 
 a {
   display: inline-flex;
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -207,7 +207,7 @@ main#home h1 {
 }
 
 .clock path {
-  fill: #000;
+  fill: #fff;
   stroke: none;
   opacity: 0.06;
 }
@@ -261,7 +261,7 @@ main#home h1 {
 }
 .about-info .job {
   padding: 0.5rem;
-  background: white;
+  background: #515151;
   border-bottom: 5px solid #eece1a;
 }
 
@@ -317,20 +317,20 @@ main#home h1 {
 }
 
 .btn-dark {
-  background: #404040;
+  background: black;
   color: #fff;
 }
 
 .btn-light {
-  background: white;
+  background: #c4c4c4;
   color: #000;
 }
 
 #main-footer {
   padding: 1rem;
   text-align: center;
-  color: #000;
-  background: #e6e6e6;
+  color: #fff;
+  background: #2b2b2b;
 }
 
 @media screen and (min-width: 1171) {
@@ -418,7 +418,7 @@ div.menu-branding.show {
     font-size: 1.5rem;
     font-weight: 300;
     padding: 1rem 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(73, 73, 73, 0.5);
   }
   main#home .icons {
     margin-top: 30px;
