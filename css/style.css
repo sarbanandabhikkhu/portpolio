@@ -242,8 +242,8 @@ main .separator {
   grid-template-columns: repeat(3, 1fr);
 }
 .about-info .bio-image {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   grid-area: bioimg;
   margin: auto;
   border-radius: 50%;
