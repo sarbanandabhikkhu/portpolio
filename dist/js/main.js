@@ -13,26 +13,26 @@ let showMenu = false;
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
-    if (!showMenu) {
-        menuBtn.classList.add('close');
-        menu.classList.add('show');
-        menuNav.classList.add('show');
-        menuBranding.classList.add('show');
-        navItems.forEach(item => item.classList.add('show'));
+  if (!showMenu) {
+    menuBtn.classList.add('close');
+    menu.classList.add('show');
+    menuNav.classList.add('show');
+    menuBranding.classList.add('show');
+    navItems.forEach(item => item.classList.add('show'));
 
-        // show menu state
-        showMenu = true;
-    } else {
-        menuBtn.classList.remove('close');
-        menu.classList.remove('show');
-        menuNav.classList.remove('show');
-        menuBranding.classList.remove('show');
-        navItems.forEach(item => item.classList.remove('show'));
+    // show menu state
+    showMenu = true;
+  } else {
+    menuBtn.classList.remove('close');
+    menu.classList.remove('show');
+    menuNav.classList.remove('show');
+    menuBranding.classList.remove('show');
+    navItems.forEach(item => item.classList.remove('show'));
 
-        // show menu state
-        showMenu = false;
+    // show menu state
+    showMenu = false;
 
-    }
+  }
 }
 
 // send email 
@@ -48,79 +48,78 @@ submitBtn.addEventListener('click', () => {
     Email: ${email}\r\n
     ${messege}
   `;
-  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?cc=sarbanandachakma@gmail.com,sarbanandadev@gmail.com&subject="+subject+"&body="+body;
+  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?cc=sarbanandachakma@gmail.com,sarbanandadev@gmail.com&subject=" + subject + "&body=" + body;
 });
 
 // segment clock
 const digSegments = [
-    [1, 2, 3, 4, 5, 6],
-    [2, 3], [1, 2, 7, 5, 4],
-    [1, 2, 7, 3, 4],
-    [6, 7, 2, 3],
-    [1, 6, 7, 3, 4],
-    [1, 6, 5, 4, 3, 7],
-    [1, 2, 3],
-    [1, 2, 3, 4, 5, 6, 7],
-    [4, 3, 2, 1, 6, 7]
-  ];
-  const perSegments = [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  ];
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    const _hours = document.querySelectorAll('.hours');
-    const _minutes = document.querySelectorAll('.minutes');
-    const _seconds = document.querySelectorAll('.seconds');
-  
-    setInterval(function() {
-      let date = new Date(),
-        hours = date.getHours(),
-        minutes = date.getMinutes(),
-        seconds = date.getSeconds(),
-        periods = hours >= 12 ? 'PM' : 'AM';
-  
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-  
-      setNumber(_hours[0], Math.floor(hours / 10), 1);
-      setNumber(_hours[1], hours % 10, 1);
-      setNumber(_minutes[0], Math.floor(minutes / 10), 1);
-      setNumber(_minutes[1], minutes % 10, 1);
-      setNumber(_seconds[0], Math.floor(seconds / 10), 1);
-      setNumber(_seconds[1], seconds % 10, 1);
-  
-      if (periods === 'AM') {
-        perSegments[0].forEach(per => document.querySelector('.periods path.segment' + per).style.opacity = '1');
-      } else {
-        perSegments[1].forEach(per => document.querySelector('.periods path.segment' + per).style.opacity = '1');
-      }
-  
-    }, 1000);
-  });
-  
-  var setNumber = function(digit, number, on) {
-    const segments = digit.querySelectorAll('.segment');
-    const current = parseInt(digit.getAttribute('data-value'));
-  
-    if (!isNaN(current) && current != number) {
-      digSegments[current].forEach(function(digitSegment, index) {
-        setTimeout(function() {
-          segments[digitSegment - 1].classList.remove('on');
+  [1, 2, 3, 4, 5, 6],
+  [2, 3], [1, 2, 7, 5, 4],
+  [1, 2, 7, 3, 4],
+  [6, 7, 2, 3],
+  [1, 6, 7, 3, 4],
+  [1, 6, 5, 4, 3, 7],
+  [1, 2, 3],
+  [1, 2, 3, 4, 5, 6, 7],
+  [4, 3, 2, 1, 6, 7]
+];
+const perSegments = [
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+];
+
+document.addEventListener('DOMContentLoaded', function () {
+  const _hours = document.querySelectorAll('.hours');
+  const _minutes = document.querySelectorAll('.minutes');
+  const _seconds = document.querySelectorAll('.seconds');
+
+  setInterval(function () {
+    let date = new Date(),
+      hours = date.getHours(),
+      minutes = date.getMinutes(),
+      seconds = date.getSeconds(),
+      periods = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    setNumber(_hours[0], Math.floor(hours / 10), 1);
+    setNumber(_hours[1], hours % 10, 1);
+    setNumber(_minutes[0], Math.floor(minutes / 10), 1);
+    setNumber(_minutes[1], minutes % 10, 1);
+    setNumber(_seconds[0], Math.floor(seconds / 10), 1);
+    setNumber(_seconds[1], seconds % 10, 1);
+
+    if (periods === 'AM') {
+      perSegments[0].forEach(per => document.querySelector('.periods path.segment' + per).style.opacity = '1');
+    } else {
+      perSegments[1].forEach(per => document.querySelector('.periods path.segment' + per).style.opacity = '1');
+    }
+
+  }, 1000);
+});
+
+var setNumber = function (digit, number, on) {
+  const segments = digit.querySelectorAll('.segment');
+  const current = parseInt(digit.getAttribute('data-value'));
+
+  if (!isNaN(current) && current != number) {
+    digSegments[current].forEach(function (digitSegment, index) {
+      setTimeout(function () {
+        segments[digitSegment - 1].classList.remove('on');
+      }, index * 45);
+    });
+  }
+
+  if (isNaN(current) || current != number) {
+    setTimeout(function () {
+      digSegments[number].forEach(function (digitSegment, index) {
+        setTimeout(function () {
+          segments[digitSegment - 1].classList.add('on');
         }, index * 45);
       });
-    }
-  
-    if (isNaN(current) || current != number) {
-      setTimeout(function() {
-        digSegments[number].forEach(function(digitSegment, index) {
-          setTimeout(function() {
-            segments[digitSegment - 1].classList.add('on');
-          }, index * 45);
-        });
-      }, 250);
-      digit.setAttribute('data-value', number);
-    }
-  
-  };
-  
+    }, 250);
+    digit.setAttribute('data-value', number);
+  }
+
+};
