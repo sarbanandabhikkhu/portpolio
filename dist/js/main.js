@@ -5,7 +5,7 @@ const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
-const emailBtn = document.querySelector('.email-btn');
+const submitBtn = document.querySelector('#submit');
 
 // set initial state of menu
 let showMenu = false;
@@ -36,10 +36,19 @@ function toggleMenu() {
 }
 
 // send email 
-emailBtn.addEventListener('click', () => {
-  const body = document.querySelector('.messege').value;
-  const subject = document.querySelector('.subject').value;
-  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?subject="+subject+"&body="+body;
+submitBtn.addEventListener('click', () => {
+  const name = document.querySelector('#name').value;
+  const phone = document.querySelector('#phone').value;
+  const email = document.querySelector('#email').value;
+  const messege = document.querySelector('#messege').value;
+  const subject = document.querySelector('#subject').value || 'NO SUBJECT';
+  const body = `
+    Name: ${name}\r\n
+    Phone: ${phone}\r\n
+    Email: ${email}\r\n
+    ${messege}
+  `;
+  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?cc=sarbanandachakma@gmail.com,sarbanandadev@gmail.com&subject="+subject+"&body="+body;
 });
 
 // segment clock
