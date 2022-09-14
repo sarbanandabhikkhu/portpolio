@@ -37,7 +37,6 @@
 }
 
 // menu overlay
-
 .menu {
   position: fixed;
   top: 0;
@@ -88,7 +87,9 @@
     .portrait {
       width: 250px;
       height: 250px;
-      background: url("../../dist/img/avatars/monk.svg");
+      background: url("https://avatars.githubusercontent.com/u/105801170?s=400&u=768e67c843441822df7e79d887a15e14b368b07d&v=4");
+      background-attachment: fixed;
+      background-size: cover;
       border: 3px solid $secondery-color;
       border-radius: 50%;
     }

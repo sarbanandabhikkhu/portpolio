@@ -1,57 +1,40 @@
 // select dom items
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
-const menuNav = document.querySelector('.menu-nav');
-const menuBranding = document.querySelector('.menu-branding');
-const navItems = document.querySelectorAll('.nav-item');
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
+const menuNav = document.querySelector(".menu-nav");
+const menuBranding = document.querySelector(".menu-branding");
+const navItems = document.querySelectorAll(".nav-item");
 
-const submitBtn = document.querySelector('#submit');
+const submitBtn = document.querySelector("#submit");
 
 // set initial state of menu
 let showMenu = false;
 
-menuBtn.addEventListener('click', toggleMenu);
+menuBtn.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
   if (!showMenu) {
-    menuBtn.classList.add('close');
-    menu.classList.add('show');
-    menuNav.classList.add('show');
-    menuBranding.classList.add('show');
-    navItems.forEach(item => item.classList.add('show'));
+    menuBtn.classList.add("close");
+    menu.classList.add("show");
+    menuNav.classList.add("show");
+    menuBranding.classList.add("show");
+    navItems.forEach((item) => item.classList.add("show"));
 
     // show menu state
     showMenu = true;
   } else {
-    menuBtn.classList.remove('close');
-    menu.classList.remove('show');
-    menuNav.classList.remove('show');
-    menuBranding.classList.remove('show');
-    navItems.forEach(item => item.classList.remove('show'));
+    menuBtn.classList.remove("close");
+    menu.classList.remove("show");
+    menuNav.classList.remove("show");
+    menuBranding.classList.remove("show");
+    navItems.forEach((item) => item.classList.remove("show"));
 
     // show menu state
     showMenu = false;
-
   }
 }
 
-// send email 
-submitBtn.addEventListener('click', () => {
-  const name = document.querySelector('#name').value;
-  const phone = document.querySelector('#phone').value;
-  const email = document.querySelector('#email').value;
-  const messege = document.querySelector('#messege').value;
-  const subject = document.querySelector('#subject').value || 'NO SUBJECT';
-  const body = `
-    Name: ${name}\r\n
-    Phone: ${phone}\r\n
-    Email: ${email}\r\n
-    ${messege}
-  `;
-  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?cc=sarbanandachakma@gmail.com,sarbanandadev@gmail.com&subject=" + subject + "&body=" + body;
-});
-
-// segment clock
+// clock
 const digSegments = [
   [1, 2, 3, 4, 5, 6],
   [2, 3], [1, 2, 7, 5, 4],
@@ -68,12 +51,12 @@ const perSegments = [
   [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ];
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const _hours = document.querySelectorAll('.hours');
   const _minutes = document.querySelectorAll('.minutes');
   const _seconds = document.querySelectorAll('.seconds');
 
-  setInterval(function () {
+  setInterval(function() {
     let date = new Date(),
       hours = date.getHours(),
       minutes = date.getMinutes(),
@@ -99,22 +82,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 1000);
 });
 
-var setNumber = function (digit, number, on) {
+const setNumber = function(digit, number, on) {
   const segments = digit.querySelectorAll('.segment');
   const current = parseInt(digit.getAttribute('data-value'));
 
   if (!isNaN(current) && current != number) {
-    digSegments[current].forEach(function (digitSegment, index) {
-      setTimeout(function () {
+    digSegments[current].forEach(function(digitSegment, index) {
+      setTimeout(function() {
         segments[digitSegment - 1].classList.remove('on');
       }, index * 45);
     });
   }
 
   if (isNaN(current) || current != number) {
-    setTimeout(function () {
-      digSegments[number].forEach(function (digitSegment, index) {
-        setTimeout(function () {
+    setTimeout(function() {
+      digSegments[number].forEach(function(digitSegment, index) {
+        setTimeout(function() {
           segments[digitSegment - 1].classList.add('on');
         }, index * 45);
       });
@@ -123,3 +106,24 @@ var setNumber = function (digit, number, on) {
   }
 
 };
+
+// send email
+submitBtn.addEventListener("click", () => {
+  const name = document.querySelector("#name").value;
+  const phone = document.querySelector("#phone").value;
+  const email = document.querySelector("#email").value;
+  const messege = document.querySelector("#messege").value;
+  const subject = document.querySelector("#subject").value || "NO SUBJECT";
+  const body = `
+    Name: ${name}\r\n
+    Phone: ${phone}\r\n
+    Email: ${email}\r\n
+    ${messege}
+  `;
+  window.location.href =
+    "mailto:sarbanandabhikkhu@gmail.com?cc=sarbanandachakma@gmail.com,sarbanandadev@gmail.com&subject=" +
+    subject +
+    "&body=" +
+    body;
+});
+
