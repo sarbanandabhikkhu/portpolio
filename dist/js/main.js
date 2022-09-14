@@ -5,6 +5,8 @@ const menuNav = document.querySelector('.menu-nav');
 const menuBranding = document.querySelector('.menu-branding');
 const navItems = document.querySelectorAll('.nav-item');
 
+const emailBtn = document.querySelector('.email-btn');
+
 // set initial state of menu
 let showMenu = false;
 
@@ -32,6 +34,13 @@ function toggleMenu() {
 
     }
 }
+
+// send email 
+emailBtn.addEventListener('click', () => {
+  const body = document.querySelector('.messege').value;
+  const subject = document.querySelector('.subject').value;
+  window.location.href = "mailto:sarbanandabhikkhu@gmail.com?subject="+subject+"&body="+body;
+});
 
 // segment clock
 const digSegments = [

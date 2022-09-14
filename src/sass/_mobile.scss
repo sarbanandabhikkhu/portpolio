@@ -72,6 +72,17 @@
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+  .contact-form {
+    form {
+      .row {
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .row .input-group {
+        width: 100%;
+      }
+    }
+  }
 }
 // smartphone
 @include mediaSm {
